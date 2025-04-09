@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Code</title>
+    <script>
+        function checkCode() {
+            // The correct code
+            var correctCode = "158900";
+            // Get the user input
+            var userCode = document.getElementById("codeInput").value;
+
+            // Check if the entered code is correct
+            if (userCode === correctCode) {
+                // Redirect to the correct website
+                window.location.href = "https://epicgamesfan100.github.io/Story1/";  // Replace with the correct website
+            } else {
+                // Redirect to the YouTube video
+                window.location.href = "https://www.youtube.com/watch?v=aTCMd6MG_8Y";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Enter the Code</h1>
+    <p>Please enter the 6-digit code to proceed:</p>
+    <input type="text" id="codeInput" maxlength="6" placeholder="Enter 6-digit code" />
+    <button onclick="checkCode()">Submit</button>
+</body>
+</html>
