@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enter Code</title>
     <script>
+        var spacebarPressCount = 0;  // Variable to track the number of Spacebar presses
+
+        // Function to check the entered code
         function checkCode() {
             // The correct code
             var correctCode = "158900";
@@ -20,6 +23,20 @@
                 window.location.href = "https://www.youtube.com/watch?v=aTCMd6MG_8Y";
             }
         }
+
+        // Function to handle Spacebar press count
+        function handleSpacebarPress(event) {
+            if (event.code === "Space") {
+                spacebarPressCount++;  // Increment count when Spacebar is pressed
+                if (spacebarPressCount > 25) {
+                    // If Spacebar has been pressed more than 25 times, redirect to another website
+                    window.location.href = "https://www.anotherwebsite.com";  // Replace with your desired URL
+                }
+            }
+        }
+
+        // Add event listener for Spacebar keydown
+        document.addEventListener("keydown", handleSpacebarPress);
     </script>
 </head>
 <body>
@@ -27,5 +44,6 @@
     <p>Please enter the 6-digit code to proceed:</p>
     <input type="text" id="codeInput" maxlength="6" placeholder="Enter 6-digit code" />
     <button onclick="checkCode()">Submit</button>
+    <p>Press the Spacebar more than 25 times to go to a secret website!</p>
 </body>
 </html>
